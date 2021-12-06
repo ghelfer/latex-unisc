@@ -24,7 +24,7 @@
 % Identificação
 %==============================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{unisc}[2017/05/14 v1.2.0 Formatacao de documentos para a UNISC]
+\ProvidesClass{unisc}[2017/05/14 v1.2.1 Formatacao de documentos para a UNISC]
 
 %==============================================================================
 % Declaração de opções
@@ -196,18 +196,18 @@
 % Definição das capas
 %==============================================================================
 \newlength{\titlepagewinwidth}\setlength{\titlepagewinwidth}{160mm}
-\newlength{\titlepagewinheight}\setlength{\titlepagewinheight}{110mm}
+\newlength{\titlepagewinheight}\setlength{\titlepagewinheight}{105mm}
 \newlength{\titlepagewinvoffset}\setlength{\titlepagewinvoffset}{20mm}
 
 \newcommand{\makecapa}{%
   \begin{titlepage}
-    \vspace*{-1cm}
+    \vspace*{-5mm}
     \noindent\@topboxcapa\\
     \par
     \vfill
     \centerline{\@city}
     \centerline{\@publyear}
-    \vspace*{26mm}
+    \vspace*{0mm}
   \end{titlepage}
   \clearpage
 }
@@ -216,7 +216,7 @@
   \parbox[t]{\textwidth}{%
     \centering%
     \vbox to \titlepagewinvoffset{%
-      \vspace*{40mm}
+      \vspace*{20mm}
       \titlepagetopinfocapa\vfill\setstretch{1.5}\@winboxcapa
     }
   }
@@ -228,11 +228,11 @@
 \def\@winboxcapa{%
   \parbox[b]{\titlepagewinwidth}{%
     \centering\vbox to \titlepagewinheight{%
-      \vspace*{5cm}
+      \vspace*{45mm}
       \@authora\\
-      \vspace*{3cm}
+      \vspace*{75mm}
       \textbf{\texorpdfstring{\MakeUppercase{\@title}}{\@title}}\par
-      \vspace*{3cm}
+      \vspace*{30mm}
     }
   }%
 }
@@ -267,13 +267,11 @@
   \setstretch{1.0}
   \noindent\@topbox\\
   \vfill
-  \vfill
+  \vspace{20mm}
   \@ifundefined{titlepagespecificinfo}{}{
     \hspace*{\fill}\makebox[.53\textwidth][l]{%
       \parbox[b]{8.5cm}{\setstretch{1.0}\titlepagespecificinfo}%
     }
-    \linebreak
-    \linebreak
     \linebreak
     \linebreak
     \linebreak
